@@ -14,10 +14,12 @@ Reference values for gyromagnetic ratio.
 ## Usage
 
 ```js
-import { myModule } from 'gyromagnetic-ratio';
+import { gyromagneticRatio } from 'gyromagnetic-ratio';
 
-const result = myModule(args);
-// result is ...
+const proton = gyromagneticRatio['1H'];
+
+console.log(proton);
+// 267522187.44
 ```
 
 ## License
