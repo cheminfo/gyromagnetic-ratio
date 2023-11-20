@@ -44,7 +44,8 @@ export const gyromagneticRatio: GyromagneticRatio = {
 };
 
 export function getGyromagneticRatio(nucleus: string) {
-  if (gyromagneticRatio[nucleus as Nuclei]) return gyromagneticRatio[nucleus as Nuclei];
+  if (gyromagneticRatio[nucleus as Nuclei])
+    return gyromagneticRatio[nucleus as Nuclei];
 
   nucleus = nucleus.toLowerCase();
   if (nucleus === 'proton') return gyromagneticRatio['1H'];
