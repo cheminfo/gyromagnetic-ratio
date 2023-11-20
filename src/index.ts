@@ -54,8 +54,7 @@ export function getGyromagneticRatio(nucleus: string) {
   const nucleusNumber = nucleus.replace(/[^0-9]/g, '');
   if (!nucleusNumber) return null;
   for (const key in gyromagneticRatio) {
-    //@ts-expect-error we know it is correct
-    if (key.includes(nucleusNumber)) return gyromagneticRatio[key];
+    if (key.includes(nucleusNumber)) return gyromagneticRatio[key as Nuclei];
   }
 
   return null;
