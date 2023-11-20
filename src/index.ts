@@ -42,3 +42,21 @@ export const gyromagneticRatio: GyromagneticRatio = {
   '67Zn': 16.767e6,
   '129Xe': -73.997e6,
 };
+
+export function getGyromagneticRatio(nucleus: string) {
+  //@ts-expect-error we check that it is correct
+  if (gyromagneticRatio[nucleus]) return gyromagneticRatio[nucleus];
+
+  nucleus = nucleus.toLowerCase();
+  if (nucleus === 'proton') return gyromagneticRatio['1H'];
+
+  // we try to use only the numbers
+  const nucleusNumber = nucleus.replace(/[^0-9]/g, '');
+  if (!nucleusNumber) return null;
+  for (const key in gyromagneticRatio) {
+    //@ts-expect-error we know it is correct
+    if (key.includes(nucleusNumber)) return gyromagneticRatio[key];
+  }
+
+  return null;
+}
