@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.1.0...v1.1.1) (2023-11-20)
+
+
+### Bug Fixes
+
+* return type of getGyromagneticRatio ([6cfbc83](https://github.com/cheminfo/gyromagnetic-ratio/commit/6cfbc83ef8b7139b0b66a5fa6ec5ca715367aab4))
+
 ## [1.1.0](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.0.0...v1.1.0) (2023-11-20)
 
 
