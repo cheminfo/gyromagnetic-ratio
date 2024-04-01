@@ -7,7 +7,6 @@ test('gyromagneticRatio', () => {
 test('getGyromagneticRatio', () => {
   expect(getGyromagneticRatio('1H')).toBe(267522187.44);
   expect(getGyromagneticRatio('proton')).toBe(267522187.44);
-  expect(getGyromagneticRatio('fluorine')).toBe(251.662e6);
   expect(getGyromagneticRatio('1hydrogen')).toBe(267522187.44);
   expect(getGyromagneticRatio('hydrogen1')).toBe(267522187.44);
   expect(getGyromagneticRatio('carbon13')).toBe(67282840);

@@ -93,7 +93,9 @@ export function getGyromagneticRatio(nucleus: string) {
   const nucleusNumber = nucleus.replace(/[^0-9]/g, '');
   if (!nucleusNumber) return null;
   for (const key in gyromagneticRatio) {
-    if (key.includes(nucleusNumber)) return gyromagneticRatio[key as Nuclei];
+    if (key.replace(/[^0-9]/g, '') === nucleusNumber) {
+      return gyromagneticRatio[key as Nuclei];
+    }
   }
 
   return null;
