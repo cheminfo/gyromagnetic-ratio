@@ -16,7 +16,26 @@ export type Nuclei =
   | '57Fe'
   | '63Cu'
   | '67Zn'
-  | '129Xe';
+  | '129Xe'
+  | '195Pt'
+  | '199Hg'
+  | '187Os'
+  | '183W'
+  | '125Te'
+  | '123Te'
+  | '119Sn'
+  | '117Sn'
+  | '115Sn'
+  | '113Cd'
+  | '111Cd'
+  | '109Ag'
+  | '107Ag'
+  | '103Rh'
+  | '89Y'
+  | '77Se'
+  | '203Tl'
+  | '205Tl'
+  | '207Pb';
 
 type GyromagneticRatio = {
   [key in Nuclei]: number;
@@ -41,6 +60,25 @@ export const gyromagneticRatio: GyromagneticRatio = {
   '63Cu': 71.118e6,
   '67Zn': 16.767e6,
   '129Xe': -73.997e6,
+  '195Pt': 58.385e6,
+  '199Hg': 48.457916e6,
+  '187Os': 6.192895e6,
+  '183W': 11.282403e6,
+  '125Te': -85.108404e6,
+  '123Te': -70.59098e6,
+  '119Sn': -100.317e6,
+  '117Sn': -95.8879e6,
+  '115Sn': -88.013e6,
+  '113Cd': -59.609155e6,
+  '111Cd': -56.983131e6,
+  '109Ag': -12.518634e6,
+  '77Se': 51.253857e6,
+  '89Y': -13.162791e6,
+  '103Rh': -8.468e6,
+  '107Ag': -10.889181e6,
+  '203Tl': 155.393338e6,
+  '205Tl': 156.921808e6,
+  '207Pb': 55.8046e6,
 };
 
 export function getGyromagneticRatio(nucleus: string) {
