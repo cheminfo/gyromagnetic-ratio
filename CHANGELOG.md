@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.1.1...v1.2.0) (2024-04-03)
+
+
+### Features
+
+* ensure atomic number matching and add more nuclei ([#5](https://github.com/cheminfo/gyromagnetic-ratio/issues/5)) ([ccffaa6](https://github.com/cheminfo/gyromagnetic-ratio/commit/ccffaa6ce88023eef5b7fcab323d1df61f3b5ac1))
+
 ## [1.1.1](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.1.0...v1.1.1) (2023-11-20)
 
 
