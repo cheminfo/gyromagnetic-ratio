@@ -5,7 +5,8 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Reference values for gyromagnetic ratio.
+Reference values for gyromagnetic ratio in $rad \over Ts $ extracted from:
+- [NMR nomenclature. Nuclear spin properties and conventions for chemical shifts(IUPAC Recommendations 2001)](https://dx.doi.org/10.1351/pac200173111795).
 
 ## Installation
 
