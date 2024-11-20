@@ -1,47 +1,6 @@
-type Nuclei =
-  | '1H'
-  | '2H'
-  | '3H'
-  | '3He'
-  | '7Li'
-  | '13C'
-  | '14N'
-  | '15N'
-  | '17O'
-  | '19F'
-  | '23Na'
-  | '27Al'
-  | '29Si'
-  | '31P'
-  | '57Fe'
-  | '63Cu'
-  | '67Zn'
-  | '129Xe'
-  | '195Pt'
-  | '199Hg'
-  | '187Os'
-  | '183W'
-  | '125Te'
-  | '123Te'
-  | '119Sn'
-  | '117Sn'
-  | '115Sn'
-  | '113Cd'
-  | '111Cd'
-  | '109Ag'
-  | '107Ag'
-  | '103Rh'
-  | '89Y'
-  | '77Se'
-  | '203Tl'
-  | '205Tl'
-  | '207Pb';
+export type GyromagneticNucleus = keyof typeof gyromagneticRatio;
 
-type GyromagneticRatio = {
-  [key in Nuclei]: number;
-};
-
-export const gyromagneticRatio: GyromagneticRatio = {
+export const gyromagneticRatio = {
   '1H': 267.52218744e6,
   '2H': 41.065e6,
   '3H': 285.3508e6,
@@ -81,22 +40,5 @@ export const gyromagneticRatio: GyromagneticRatio = {
   '207Pb': 55.8046e6,
 };
 
-export function getGyromagneticRatio(nucleus: string): number | null {
-  if (gyromagneticRatio[nucleus as Nuclei]) {
-    return gyromagneticRatio[nucleus as Nuclei];
-  }
-
-  nucleus = nucleus.toLowerCase();
-  if (nucleus === 'proton') return gyromagneticRatio['1H'];
-
-  // we try to use only the numbers
-  const nucleusNumber = nucleus.replace(/[^0-9]/g, '');
-  if (!nucleusNumber) return null;
-  for (const key in gyromagneticRatio) {
-    if (key.replace(/[^0-9]/g, '') === nucleusNumber) {
-      return gyromagneticRatio[key as Nuclei];
-    }
-  }
-
-  return null;
-}
+export * from './getGyromagneticNucleus';
+export * from './getGyromagneticRatio';
