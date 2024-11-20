@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.2.0...v1.2.1) (2024-11-20)
+
+
+### Bug Fixes
+
+* do not expose type ([38a2ab5](https://github.com/cheminfo/gyromagnetic-ratio/commit/38a2ab563f0ff1ad12178f7e3295eb771120e7f4))
+
 ## [1.2.0](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.1.1...v1.2.0) (2024-04-03)
 
 
