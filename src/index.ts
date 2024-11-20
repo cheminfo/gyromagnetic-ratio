@@ -1,4 +1,4 @@
-export type Nuclei =
+type Nuclei =
   | '1H'
   | '2H'
   | '3H'
@@ -81,7 +81,7 @@ export const gyromagneticRatio: GyromagneticRatio = {
   '207Pb': 55.8046e6,
 };
 
-export function getGyromagneticRatio(nucleus: string) {
+export function getGyromagneticRatio(nucleus: string): number | null {
   if (gyromagneticRatio[nucleus as Nuclei]) {
     return gyromagneticRatio[nucleus as Nuclei];
   }
