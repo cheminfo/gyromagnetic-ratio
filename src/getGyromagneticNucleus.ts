@@ -4,7 +4,7 @@ import { gyromagneticRatio } from '.';
 export function getGyromagneticNucleus(
   nucleus: string,
 ): GyromagneticNucleus | null {
-  if (gyromagneticRatio[nucleus as GyromagneticNucleus]) {
+  if (nucleus in gyromagneticRatio) {
     return nucleus as GyromagneticNucleus;
   }
 
