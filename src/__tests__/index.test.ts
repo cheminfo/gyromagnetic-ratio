@@ -1,4 +1,8 @@
-import { getGyromagneticRatio, gyromagneticRatio } from '..';
+import { test, expect } from 'vitest';
+
+import { gyromagneticRatio } from '..';
+import { getGyromagneticNucleus } from '../getGyromagneticNucleus';
+import { getGyromagneticRatio } from '../getGyromagneticRatio';
 
 test('gyromagneticRatio', () => {
   expect(gyromagneticRatio['1H']).toBe(267522187.44);
@@ -28,7 +32,21 @@ test('should return the gyromagnetic ratio for nuclei provided numbers only', ()
 
 test('should have absolute values greater than 10000', () => {
   const values = Object.values(gyromagneticRatio);
-  values.forEach((value) => {
+  for (const value of values) {
     expect(Math.abs(value)).toBeGreaterThan(10000);
-  });
+  }
+});
+
+test('get nucleus from a string', () => {
+  expect(getGyromagneticNucleus('1H')).toBe('1H');
+  expect(getGyromagneticNucleus('proton')).toBe('1H');
+  expect(getGyromagneticNucleus('1hydrogen')).toBe('1H');
+  expect(getGyromagneticNucleus('1-hydrogen')).toBe('1H');
+  expect(getGyromagneticNucleus('hydrogen1')).toBe('1H');
+  expect(getGyromagneticNucleus('hydrogen-1')).toBe('1H');
+  expect(getGyromagneticNucleus('carbon13')).toBe('13C');
+  expect(getGyromagneticNucleus('119Sn')).toBe('119Sn');
+  expect(getGyromagneticNucleus('77')).toBe('77Se');
+  expect(getGyromagneticNucleus('123')).toBe('123Te');
+  expect(getGyromagneticNucleus('unknown')).toBe(null);
 });
