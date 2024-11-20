@@ -1,8 +1,10 @@
 import { test, expect } from 'vitest';
 
-import { gyromagneticRatio } from '..';
-import { getGyromagneticNucleus } from '../getGyromagneticNucleus';
-import { getGyromagneticRatio } from '../getGyromagneticRatio';
+import {
+  gyromagneticRatio,
+  getGyromagneticNucleus,
+  getGyromagneticRatio,
+} from '..';
 
 test('gyromagneticRatio', () => {
   expect(gyromagneticRatio['1H']).toBe(267522187.44);
