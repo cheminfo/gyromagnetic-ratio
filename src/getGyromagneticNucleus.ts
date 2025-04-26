@@ -1,6 +1,12 @@
 import type { GyromagneticNucleus } from '.';
 import { gyromagneticRatio } from '.';
 
+/**
+ * Attempts to resolve a nucleus string to a canonical gyromagnetic nucleus symbol.
+ *
+ * @param nucleus - The name or symbol of the nucleus (e.g., '1H', 'proton').
+ * @returns The canonical nucleus symbol if found, otherwise null.
+ */
 export function getGyromagneticNucleus(
   nucleus: string,
 ): GyromagneticNucleus | null {
