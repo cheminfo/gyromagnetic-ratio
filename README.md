@@ -6,7 +6,8 @@
 [![npm download][download-image]][download-url]
 
 Reference values for gyromagnetic ratio in $rad \over Ts $ extracted from:
-- [NMR nomenclature. Nuclear spin properties and conventions for chemical shifts(IUPAC Recommendations 2001)](https://dx.doi.org/10.1351/pac200173111795).
+- [Konstantin's gyromagnetic ratio table](https://www.kherb.io/docs/nmr_table.html) with is based on:
+- [CODATA recommended values of the fundamental physical constants: 2018*](https://doi.org/10.1103/RevModPhys.93.025010).
 
 ## Installation
 
@@ -20,7 +21,7 @@ import { gyromagneticRatio } from 'gyromagnetic-ratio';
 const proton = gyromagneticRatio['1H'];
 
 console.log(proton);
-// 267522187.44
+// 267522188.05267358
 ```
 
 ## License
