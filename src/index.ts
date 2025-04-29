@@ -7,5 +7,6 @@ for (const key in gyromagneticRatioMHzT) {
   gyromagneticRatio[key] = gyromagneticRatioMHzT[key] * 2 * Math.PI;
 }
 
+export * from './gyromagneticRatioMHzT';
 export * from './getGyromagneticNucleus';
 export * from './getGyromagneticRatio';
