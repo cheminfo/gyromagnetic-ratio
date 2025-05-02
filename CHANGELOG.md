@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.2.1...v2.0.0) (2025-05-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* refactor project, rename type to GyromagneticNucleus and add getGyromagneticNucleus ([#8](https://github.com/cheminfo/gyromagnetic-ratio/issues/8))
+
+### Features
+
+* add additional gyromagnetic ratios for various isotopes ([#11](https://github.com/cheminfo/gyromagnetic-ratio/issues/11)) ([9414d1c](https://github.com/cheminfo/gyromagnetic-ratio/commit/9414d1c4c3b838540201d7a9c4e9f6bc84af4d84))
+* refactor project, rename type to GyromagneticNucleus and add getGyromagneticNucleus ([#8](https://github.com/cheminfo/gyromagnetic-ratio/issues/8)) ([df2bff3](https://github.com/cheminfo/gyromagnetic-ratio/commit/df2bff35f870451b9eba3d5e04f07870989fe8b0))
+
 ## [1.2.1](https://github.com/cheminfo/gyromagnetic-ratio/compare/v1.2.0...v1.2.1) (2024-11-20)
 
 
