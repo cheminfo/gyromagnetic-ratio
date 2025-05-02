@@ -1,44 +1,14 @@
-export type GyromagneticNucleus = keyof typeof gyromagneticRatio;
+import { gyromagneticRatioMHzT } from './gyromagneticRatioMHzT';
 
-export const gyromagneticRatio = {
-  '1H': 267.52218744e6,
-  '2H': 41.065e6,
-  '3H': 285.3508e6,
-  '3He': -203.789e6,
-  '7Li': 103.962e6,
-  '13C': 67.28284e6,
-  '14N': 19.331e6,
-  '15N': -27.116e6,
-  '17O': -36.264e6,
-  '19F': 251.662e6,
-  '23Na': 70.761e6,
-  '27Al': 69.763e6,
-  '29Si': -53.19e6,
-  '31P': 108.291e6,
-  '57Fe': 8.681e6,
-  '63Cu': 71.118e6,
-  '67Zn': 16.767e6,
-  '129Xe': -73.997e6,
-  '195Pt': 58.385e6,
-  '199Hg': 48.457916e6,
-  '187Os': 6.192895e6,
-  '183W': 11.282403e6,
-  '125Te': -85.108404e6,
-  '123Te': -70.59098e6,
-  '119Sn': -100.317e6,
-  '117Sn': -95.8879e6,
-  '115Sn': -88.013e6,
-  '113Cd': -59.609155e6,
-  '111Cd': -56.983131e6,
-  '109Ag': -12.518634e6,
-  '77Se': 51.253857e6,
-  '89Y': -13.162791e6,
-  '103Rh': -8.468e6,
-  '107Ag': -10.889181e6,
-  '203Tl': 155.393338e6,
-  '205Tl': 156.921808e6,
-  '207Pb': 55.8046e6,
-};
+export type GyromagneticNucleus = keyof typeof gyromagneticRatioMHzT;
 
+export const gyromagneticRatio = Object.fromEntries(
+  Object.entries(gyromagneticRatioMHzT).map(([key, value]) => [
+    key,
+    value * 2 * Math.PI * 1e6,
+  ]),
+) as typeof gyromagneticRatioMHzT;
+
+export * from './gyromagneticRatioMHzT';
 export * from './getGyromagneticNucleus';
 export * from './getGyromagneticRatio';
