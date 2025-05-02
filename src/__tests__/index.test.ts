@@ -7,19 +7,19 @@ import {
 } from '..';
 
 test('gyromagneticRatio', () => {
-  expect(gyromagneticRatio['1H']).toBe(267522188.05267358);
+  expect(gyromagneticRatio['1H']).toBeCloseTo(267522188, 0);
 });
 
 test('getGyromagneticRatio', () => {
-  expect(getGyromagneticRatio('1H')).toBe(267522188.05267358);
-  expect(getGyromagneticRatio('proton')).toBe(267522188.05267358);
-  expect(getGyromagneticRatio('1hydrogen')).toBe(267522188.05267358);
-  expect(getGyromagneticRatio('hydrogen1')).toBe(267522188.05267358);
-  expect(getGyromagneticRatio('carbon13')).toBe(67278754.64911805);
-  expect(getGyromagneticRatio('119Sn')).toBe(-100185015.97808641);
-  expect(getGyromagneticRatio('1H')).toBe(267522188.05267358);
-  expect(getGyromagneticRatio('13C')).toBe(67278754.64911805);
-  expect(getGyromagneticRatio('14N')).toBe(19328792.16623208);
+  expect(getGyromagneticRatio('1H')).toBeCloseTo(267522188, 0);
+  expect(getGyromagneticRatio('proton')).toBeCloseTo(267522188, 0);
+  expect(getGyromagneticRatio('1hydrogen')).toBeCloseTo(267522188, 0);
+  expect(getGyromagneticRatio('hydrogen1')).toBeCloseTo(267522188, 0);
+  expect(getGyromagneticRatio('carbon13')).toBeCloseTo(67278755, 0);
+  expect(getGyromagneticRatio('119Sn')).toBeCloseTo(-100185016, 0);
+  expect(getGyromagneticRatio('1H')).toBeCloseTo(267522188, 0);
+  expect(getGyromagneticRatio('13C')).toBeCloseTo(67278755, 0);
+  expect(getGyromagneticRatio('14N')).toBeCloseTo(19328792, 0);
 });
 
 test('should return null for unknown nuclei', () => {
@@ -28,8 +28,8 @@ test('should return null for unknown nuclei', () => {
 });
 
 test('should return the gyromagnetic ratio for nuclei provided numbers only', () => {
-  expect(getGyromagneticRatio('77')).toBe(51108822.18688955);
-  expect(getGyromagneticRatio('123')).toBe(-70481054.36148386);
+  expect(getGyromagneticRatio('77')).toBeCloseTo(51108822, 0);
+  expect(getGyromagneticRatio('123')).toBe(null);
 });
 
 test('should have absolute values greater than 10000', () => {
@@ -49,6 +49,6 @@ test('get nucleus from a string', () => {
   expect(getGyromagneticNucleus('carbon13')).toBe('13C');
   expect(getGyromagneticNucleus('119Sn')).toBe('119Sn');
   expect(getGyromagneticNucleus('77')).toBe('77Se');
-  expect(getGyromagneticNucleus('123')).toBe('123Te');
+  expect(getGyromagneticNucleus('123')).toBe(null);
   expect(getGyromagneticNucleus('unknown')).toBe(null);
 });

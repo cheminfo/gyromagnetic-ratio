@@ -9,20 +9,29 @@ import { gyromagneticRatio } from '.';
 export function getGyromagneticNucleus(
   nucleus: string,
 ): GyromagneticNucleus | null {
+  nucleus = nucleus.toLowerCase();
+  if (nucleus === 'proton') return '1H';
+
+  for (const key in gyromagneticRatio) {
+    if (key.toLowerCase() === nucleus) return key as GyromagneticNucleus;
+  }
+
   if (nucleus in gyromagneticRatio) {
     return nucleus as GyromagneticNucleus;
   }
 
-  nucleus = nucleus.toLowerCase();
-  if (nucleus === 'proton') return '1H';
-
   // we try to use only the numbers
   const nucleusNumber = nucleus.replaceAll(/[^0-9]/g, '');
   if (!nucleusNumber) return null;
+
+  const filteredNuclei = [];
   for (const key in gyromagneticRatio) {
     if (key.replaceAll(/[^0-9]/g, '') === nucleusNumber) {
-      return key as GyromagneticNucleus;
+      filteredNuclei.push(key);
     }
+  }
+  if (filteredNuclei.length === 1) {
+    return filteredNuclei[0] as GyromagneticNucleus;
   }
   return null;
 }
